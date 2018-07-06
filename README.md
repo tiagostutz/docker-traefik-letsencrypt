@@ -1,16 +1,22 @@
 [DRAFT]
 
-# Docker Traefik Let's Encrypt Images 
+# Traefik Let's Encrypt docker images
 Traefik Let's Encrypt ready Docker images for you to go.
 
 - OnHost
 - HTTP Challenge based
 
+## Usage
+
+Example at: https://whois.aws01.stutz.com.br
+
+docker-compose.yml
+
 ```
 version: '3.5'
 
 services:
-  traefik-letsencrypt:
+  traefik-tls:
     image: tiagostutz/traefik-letsencrypt:1.6
     network_mode: bridge
     environment:
@@ -27,7 +33,7 @@ services:
   whoami:
     image: emilevauge/whoami
     network_mode: bridge
-    restart: always 
+    restart: always
     labels:
       - traefik.backend=whoami
       - traefik.frontend.rule=Host:yourdomain.com
