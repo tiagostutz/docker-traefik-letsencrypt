@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ACME_SERVER=""
-if [ $LETS_ENCRYPT_TEST_MODE = "true" ]; then
+if [ "$LETS_ENCRYPT_TEST_MODE" = true ]; then
     ACME_SERVER="https://acme-staging-v02.api.letsencrypt.org/directory"
 fi
 
