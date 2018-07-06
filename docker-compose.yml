@@ -1,0 +1,6 @@
+version: '3.5'
+
+services:
+  traefik-letsencrypt:
+    image: tiagostutz/traefik-letsencrypt:1.6-alpine-httpchallenge
+    build: .
