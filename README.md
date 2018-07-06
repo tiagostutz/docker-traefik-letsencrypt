@@ -4,7 +4,7 @@
 Traefik Let's Encrypt ready Docker images for you to go.
 
 - OnHost
-- HTTP Challenge based
+- HTTP Challenge based (DNS challenge coming soon)
 
 ## Usage
 
