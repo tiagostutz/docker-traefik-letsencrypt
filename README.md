@@ -1,6 +1,5 @@
-[DRAFT]
+# Traefik with Let's Encrypt Docker Images
 
-# Traefik Let's Encrypt docker images
 Traefik Let's Encrypt ready Docker images for you to go.
 
 - OnHost
