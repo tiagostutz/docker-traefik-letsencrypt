@@ -1,12 +1,10 @@
 version: '3.5'
 
 services:
-  traefik-letsencrypt-alpine-httpchallenge:
-    image: tiagostutz/traefik-letsencrypt:1.6-alpine-httpchallenge
-    build: .
-  traefik-letsencrypt-httpchallenge:
-    image: tiagostutz/traefik-letsencrypt:1.6-httpchallenge
-    build: .
   traefik-letsencrypt:
-    image: tiagostutz/traefik-letsencrypt:1.6
+    image: tiagostutz/traefik-letsencrypt:local
     build: .
+    ports:
+      - 80:80
+      - 443:443
+      - 8080:8080

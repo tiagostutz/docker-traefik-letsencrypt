@@ -13,7 +13,7 @@ touch /acme.json
 chmod 600 acme.json
 
 traefik --api  --docker --docker.watch --docker.domain=docker.localhost --docker.swarmMode=$SWARM_MODE \
---ping \
+--ping --ping.entryPoint=http \
 --metrics.prometheus \
 --entrypoints='Name:http Address::80 Redirect.EntryPoint:https' \
 --entryPoints='Name:https Address::443 TLS' \
