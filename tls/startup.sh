@@ -25,4 +25,4 @@ traefik --api  --docker --docker.watch --docker.domain=docker.localhost --docker
 --acme.onhostrule  --acme.httpchallenge \
 --acme.httpchallenge.entrypoint=http \
 --retry \
---loglevel=DEBUG
+--loglevel=$LOG_LEVEL

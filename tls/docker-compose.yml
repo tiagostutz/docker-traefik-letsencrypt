@@ -1,0 +1,21 @@
+version: '3.5'
+
+services:
+  traefik-letsencrypt:
+    image: tiagostutz/traefik-letsencrypt:tls-1.7-alpine
+    build: .
+    deploy:
+      mode: global
+      labels:
+        - traefik.enable=false
+      placement:
+        constraints:
+        - node.role == manager
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment: 
+      - LOG_LEVEL=DEBUG
+    ports:
+      - 80:80
+      - 443:443
+      - 8080:8080
