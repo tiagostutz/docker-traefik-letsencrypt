@@ -15,8 +15,8 @@ chmod 600 acme.json
 traefik --api  --docker --docker.watch --docker.domain=docker.localhost --docker.swarmMode=$SWARM_MODE \
 --ping --ping.entryPoint=http \
 --metrics.prometheus \
---entrypoints='Name:http Address::80 Redirect.EntryPoint:https' \
---entryPoints='Name:https Address::443 TLS' \
+--entrypoints='Name:http Address::80 Compress:true Redirect.EntryPoint:https' \
+--entryPoints='Name:https Address::443 Compress:true TLS' \
 --acme \
 --acme.acmelogging \
 --acme.caserver=$ACME_SERVER  --acme.email=$LETS_ENCRYPT_EMAIL   \
